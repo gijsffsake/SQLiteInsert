@@ -31,8 +31,8 @@ public class myDbAdapter  {
        private static final String UID="_id";
        private static final String NAME = "Name";
        private static final String PASSWORD= "Password";
-       private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME +
-               "( "+UID+" INTEGER PRIMARY KEY AUTOINCREMENT ," +NAME+ "VARCHAR(225)" + PASSWORD+"VARCHAR(225));";
+       private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
+               "( " + UID + " INTEGER PRIMARY KEY AUTOINCREMENT ," + NAME + "VARCHAR(225)" + PASSWORD +"VARCHAR(225));";
       // private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+TABLE_NAME;
        private Context context;
 
