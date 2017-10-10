@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         Name= (EditText) findViewById(R.id.editText);
         Pass= (EditText) findViewById(R.id.editText2);
         helper = new myDbAdapter(this);
+        context = this;
     }
 
     public void addUser(View view)
