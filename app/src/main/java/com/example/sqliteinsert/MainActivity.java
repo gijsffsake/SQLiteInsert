@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Name= (EditText) findViewById(R.id.editText);
-        Pass= (EditText) findViewById(R.id.editText2);
+        Name= (EditText) findViewById(R.id.editName);
+        Pass= (EditText) findViewById(R.id.editPass);
         helper = new myDbAdapter(this);
         context = this;
     }
@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         long identity = helper.insertData(t1,t2);
         if(identity<0)
         {
-            Message.message(context,"Unsuccessful");
+            Message.message(this,"Unsuccessful");
         } else
         {
-            Message.message(context,"Successful");
+            Message.message(this,"Successful");
         }
     }
 }
