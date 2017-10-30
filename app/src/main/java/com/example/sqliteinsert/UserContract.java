@@ -1,4 +1,4 @@
-package com.example.sqliteinsert.data;
+package com.example.sqliteinsert;
 
 import android.provider.BaseColumns;
 

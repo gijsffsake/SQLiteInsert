@@ -1,20 +1,22 @@
 package com.example.sqliteinsert;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * Created by Gijs on 10/29/2017.
+ */
 
-static class myDbHelper extends SQLiteOpenHelper
+static class myDbAdapter extends SQLiteOpenHelper
 {
-    private static final String CREATE_TABLE = "CREATE TABLE "+ com.example.sqliteinsert.data.UserContract.UserEntity.TABLE_NAME +
-            "( "+ com.example.sqliteinsert.data.UserContract.UserEntity.UID +" INTEGER PRIMARY KEY AUTOINCREMENT ," + com.example.sqliteinsert.data.UserContract.UserEntity.USER_NAME + " VARCHAR(225), " + com.example.sqliteinsert.data.UserContract.UserEntity.USER_PWD+" VARCHAR(225));";
-    private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+ com.example.sqliteinsert.data.UserContract.UserEntity.TABLE_NAME;
+    private static final String CREATE_TABLE = "CREATE TABLE "+ UserContract.UserEntity.TABLE_NAME +
+            "( "+ UserContract.UserEntity.UID +" INTEGER PRIMARY KEY AUTOINCREMENT ," + UserContract.UserEntity.USER_NAME + " VARCHAR(225), " + UserContract.UserEntity.USER_PWD+" VARCHAR(225));";
+    private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+ UserContract.UserEntity.TABLE_NAME;
     private Context context;
 
     public myDbHelper(Context context) {
-        super(context, com.example.sqliteinsert.data.UserContract.DATABASE_NAME, null, com.example.sqliteinsert.data.UserContract.DATABASE_VERSION);
+        super(context, UserContract.DATABASE_NAME, null, UserContract.DATABASE_VERSION);
         this.context=context;
         Message.message(context,"Started...");
     }
