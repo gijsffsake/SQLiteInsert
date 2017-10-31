@@ -29,10 +29,10 @@ import com.example.sqliteinsert.UserContract.UserEntity;
 /**
  * {@link ContentProvider} for Pets app.
  */
-public class PetProvider extends ContentProvider {
+public class UserProvider extends ContentProvider {
 
     /** Tag for the log messages */
-    public static final String LOG_TAG = PetProvider.class.getSimpleName();
+    public static final String LOG_TAG = UserProvider.class.getSimpleName();
 
     /** URI matcher code for the content URI for the pets table */
     private static final int USERS = 100;
@@ -56,7 +56,7 @@ public class PetProvider extends ContentProvider {
         // The content URI of the form "content://com.example.android.pets/pets" will map to the
         // integer code {@link #PETS}. This URI is used to provide access to MULTIPLE rows
         // of the pets table.
-        sUriMatcher.addURI(UserContract.CONTENT_AUTHORITY, UserContract.USER_PATH, USERS);
+        sUriMatcher.addURI(UserContract.CONTENT_AUTHORITY, UserContract.PATH_USERS, USERS);
 
         // The content URI of the form "content://com.example.android.pets/pets/#" will map to the
         // integer code {@link #PET_ID}. This URI is used to provide access to ONE single row
@@ -65,7 +65,7 @@ public class PetProvider extends ContentProvider {
         // In this case, the "#" wildcard is used where "#" can be substituted for an integer.
         // For example, "content://com.example.android.pets/pets/3" matches, but
         // "content://com.example.android.pets/pets" (without a number at the end) doesn't match.
-        sUriMatcher.addURI(UserContract.CONTENT_AUTHORITY, UserContract.USER_PATH + "/#", USER_ID);
+        sUriMatcher.addURI(UserContract.CONTENT_AUTHORITY, UserContract.PATH_USERS + "/#", USER_ID);
     }
 
     /** Database helper object */
@@ -124,7 +124,7 @@ public class PetProvider extends ContentProvider {
         final int match = sUriMatcher.match(uri);
         switch (match) {
             case USERS:
-                return insertPet(uri, contentValues);
+                return insertUser(uri, contentValues);
             default:
                 throw new IllegalArgumentException("Insertion is not supported for " + uri);
         }
@@ -134,7 +134,7 @@ public class PetProvider extends ContentProvider {
      * Insert a pet into the database with the given content values. Return the new content URI
      * for that specific row in the database.
      */
-    private Uri insertPet(Uri uri, ContentValues values) {
+    private Uri insertUser(Uri uri, ContentValues values) {
         // Check that the name is not null
         String name = values.getAsString(UserEntity.USER_NAME);
         if (name == null) {

@@ -1,6 +1,5 @@
 package com.example.sqliteinsert;
 
-import com.example.sqliteinsert.
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this,"Running", Toast.LENGTH_LONG).show();
         String t1 = Name.getText().toString();
         String t2 = Pass.getText().toString();
-        long identity = helper.insertData(t1,t2);
+        long identity = -1;//helper.insertData(t1,t2);
         if(identity<0)
         {
             Message.message(this,"Unsuccessful");
