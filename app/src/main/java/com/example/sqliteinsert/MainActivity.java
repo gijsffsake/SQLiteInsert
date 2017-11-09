@@ -42,25 +42,19 @@ public class MainActivity extends AppCompatActivity {
     {
         String t1 = Name.getText().toString();
         String t2 = Pass.getText().toString();
-        if(t1.length()<2||t2.length()<5){
-            Message.message(this,getString(R.string.addInvalidRequirements));
-        }
-        else {
             ContentValues cv = new ContentValues();
             cv.put(UserContract.UserEntry.USER_NAME,t1);
             cv.put(UserContract.UserEntry.USER_PWD,t2);
-
             Uri newUri = getContentResolver().insert(UserContract.UserEntry.CONTENT_URI,cv);
             if (newUri== null) {
-                Message.message(this, getString(R.string.addUnsuccessful));
+                Message.message(this, getString(R.string.unsuccessful));
             }
             else{
                 Name.setText("");
                 Pass.setText("");
-                Message.message(this, getString(R.string.addSuccessful));
+                Message.message(this, getString(R.string.successful));
+                }
             }
-        }
-    }
     public void delete(View view){
         String name = deleteName.getText().toString();
         if(name.length()>0) {
@@ -82,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 ContentValues cv = new ContentValues();
                 cv.put("Name", NewName);
                 int i = getContentResolver().update(uri, cv, null, null);
-                if(i<1) Message.message(this, String.format(getString(R.string.no_user_found_message), currentName));
-                else Message.message(this,getString(R.string.update_succesful_message));
+                if(i<1) Message.message(this, String.format(getString(R.string.no_user_found), currentName));
+                else Message.message(this,getString(R.string.update_succesful));
             }
         }
     }

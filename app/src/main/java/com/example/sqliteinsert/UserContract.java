@@ -9,11 +9,8 @@ public final class UserContract {
     private UserContract() {}
 
     public static final String CONTENT_AUTHORITY = "com.example.sqliteinsert";
-
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
-
     public static final String PATH_USERS = "users";
-
     public final static String DATABASE_NAME = "employee";
     public final static int DATABASE_VERSION = 5;
 
@@ -32,5 +29,6 @@ public final class UserContract {
         public final static String UID = BaseColumns._ID;
         public final static String USER_NAME = "UserName";
         public final static String USER_PWD = "Password";
+
     }
 }

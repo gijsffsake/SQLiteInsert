@@ -2,8 +2,20 @@
     <string name="app_name">SQLite Insert</string>
     <string name="username">username</string>
     <string name="password">password</string>
-    <string name="view_data">view_data</string>
-    <string name="add_user">add_user</string>
+    <string name="view_data">view data</string>
+    <string name="add_user">add user</string>
+    <string name="password_placeholder">enter password</string>
     <string name="update">update</string>
+    <string name="name_placeholder">Current Name</string>
+    <string name="userName_delete">Enter Name to Delete Data</string>
     <string name="delete">delete</string>
+    <string name="successful">Successful</string>
+    <string name="unsuccessful">Unsuccessful</string>
+    <string name="deleteSuccessful">delete successful</string>
+    <string name="deleteUnsuccessful">delete unsuccessful</string>
+    <string name="update_succesful">update successful</string>
+    <string name="update_unsuccesful">update successful</string>
+    <string name="no_user_found">No user exists by the name of \'%s\'.</string>
+
+
 </resources>

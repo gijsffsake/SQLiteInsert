@@ -85,7 +85,7 @@ public class UserProvider extends ContentProvider {
             case USERS:
                 return insertUser(uri, contentValues);
             default:
-                throw new IllegalArgumentException("Insertion is not supported for " + uri);
+                throw new IllegalArgumentException("Insert is not supported for " + uri);
         }
     }
 
@@ -95,7 +95,6 @@ public class UserProvider extends ContentProvider {
             throw new IllegalArgumentException("User requires a name");
         }
 
-        /////////////////////////////////////
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
 
         long id = database.insert(UserEntry.TABLE_NAME, null, values);
@@ -130,13 +129,10 @@ public class UserProvider extends ContentProvider {
                 throw new IllegalArgumentException("User requires a name");
             }
         }
-
         if (values.size() == 0) {
             return 0;
         }
-
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
-
         return database.update(UserEntry.TABLE_NAME, values, selection, selectionArgs);
     }
 
@@ -153,7 +149,7 @@ public class UserProvider extends ContentProvider {
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
                 return database.delete(UserEntry.TABLE_NAME, selection, selectionArgs);
             default:
-                throw new IllegalArgumentException("Deletion is not supported for " + uri);
+                throw new IllegalArgumentException("Delete is not supported for " + uri);
         }
     }
 
