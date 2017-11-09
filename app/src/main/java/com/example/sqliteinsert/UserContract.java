@@ -16,6 +16,7 @@ public final class UserContract {
 
     public final static class UserEntry implements BaseColumns{
 
+        //srgethtgewgfew
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_USERS);
 
         public static final String CONTENT_LIST_TYPE =
@@ -23,7 +24,6 @@ public final class UserContract {
 
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_USERS;
-
 
         public final static String TABLE_NAME = "UserInfo";
         public final static String UID = BaseColumns._ID;
